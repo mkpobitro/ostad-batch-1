@@ -1,0 +1,96 @@
+employees table:
+========================================
+a. Write a query to select all columns and rows from the employees table.
+
+SQL: "SELECT * FROM employees";
+
+Explanation: This query will return all the columns and rows from the employees table. The asterisk (*) is a wildcard character that represents all the columns in the table.
+
+
+
+b. Write a query to select only the name and salary columns of all employees with a salary greater than 50000.
+
+sql: "SELECT name, salary FROM employees WHERE salary > 50000;"
+
+Explanation: This query will return the name and salary columns of all employees whose salary is greater than 50000. The WHERE clause is used to filter the results based on the specified condition. In this case, it filters the results to only include employees with a salary greater than 50000.
+
+
+c. Write a query to calculate the average salary of all employees.
+
+sql: SELECT AVG(salary) AS average_salary FROM employees;
+
+Explanation:  This query will return the average salary of all employees. The AVG() function is used to calculate the average of a column, and the AS keyword is used to assign a column alias to the result. In this case, the column alias is "average_salary".
+
+
+d. Write a query to count the number of employees who work in the "Marketing" department.
+
+sql: SELECT COUNT(*) AS marketing_employees FROM employees WHERE department = 'Marketing';
+
+Explanation:  This query will return the number of employees who work in the "Marketing" department. The COUNT() function is used to count the number of rows returned by the query, and the WHERE clause is used to filter the results to only include employees who work in the "Marketing" department. The AS keyword is used to assign a column alias to the result. In this case, the column alias is "marketing_employees".
+
+
+e. Write a query to update the salary column of the employee with an id of 1001 to 60000.
+
+sql:"UPDATE employees SET salary = 60000 WHERE id = 1001;"
+
+Explanation: This query will update the salary column of the employee with an id of 1001 to 60000. The UPDATE statement is used to modify the data in the table. The SET keyword is used to specify the new value for the column, and the WHERE clause is used to identify the row(s) to be updated. In this case, we are updating the salary column of the row where the id column is equal to 1001.
+
+
+
+f. Write a query to delete all employees whose salary is less than 30000.
+
+sql:"DELETE FROM employees WHERE salary < 30000;"
+
+Explanation: This command will remove all rows from the employees table where the salary is less than 30000. Be careful when executing delete commands as they permanently delete data from the table. It's always a good practice to backup the data before performing delete operations.
+
+
+
+
+
+departments table:
+=========================
+a. SQL query to select all columns and rows from the departments table:
+
+SQL: SELECT * FROM departments;
+
+Explanation:This query will retrieve all columns and rows from the departments table.
+
+
+
+b. Write a query to select only the name and manager columns of the "Finance" department.
+
+SQL:"SELECT name, manager FROM departments WHERE name = 'Finance'"
+
+Explanation:This query will retrieve only the name and manager columns of the "Finance" department.
+
+
+
+c. Write a query to calculate the total number of employees in each department.
+
+SQL:SELECT departments.name, COUNT(*) AS total_employees
+FROM employees
+INNER JOIN departments ON employees.department_id = departments.id
+GROUP BY departments.name
+
+Explanation:
+This command will join the departments table with the employees table using the department_id column, count the number of employees for each department, and group the results by the id column of the departments table.
+
+The LEFT JOIN keyword is used to retrieve all departments, even if there are no employees in them. If you only want to retrieve departments with at least one employee, you can use INNER JOIN instead.
+
+
+
+d. Write a query to insert a new department called "Research" with a manager named "John Doe".
+
+SQL: INSERT INTO departments (name, manager)
+VALUES ('Research', 'John Doe');
+
+Explanation:This query will insert a new row into the departments table with the name "Research" and the manager "John Doe". The new row will be assigned an id value automatically, assuming that the id column has been defined as an auto-increment primary key.
+
+
+
+
+
+
+
+
+
